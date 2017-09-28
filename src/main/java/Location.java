@@ -25,6 +25,7 @@ public class Location {
 
     public void setNextLocation(Location nextLocation) {
         this.nextLocation = nextLocation;
+        nextLocation.setBeforeLocation(this);
     }
 
     public Location getBeforeLocation() {
@@ -36,9 +37,6 @@ public class Location {
     }
 
     public boolean hasNextLocation(){
-        if(getNextLocation()!=null){
-            return true;
-        }
-        return false;
+        return getNextLocation() != null;
     }
 }
